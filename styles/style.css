@@ -1,0 +1,495 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #ddf6fc;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;  
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+/* Шапка сайта*/
+.header {
+    background-image: url("../images/тест2.jpg");
+    width: 100%; 
+    height: 340px;
+    background-size: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+ 
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding-top: 20px;
+    color: rgb(238, 233, 233);
+}
+
+.header a {
+    color: rgb(238, 233, 233);
+}
+
+.header a:hover,
+.sun-system:hover,
+.test:hover {
+    color: white;  
+}
+
+.sun-system__title,
+.test__title {
+    display: flex;
+    cursor: pointer;
+}
+
+
+.sun-system__content,
+.test__content {  
+    display: none;   
+}
+
+.sun-system__content,
+.test__content {
+    width: 190px;
+    text-align: center;
+}
+
+.sun-system__content li,
+.test__content li {
+    list-style-type: none;
+    border: 1px solid rgb(255, 252, 252, 0.8);
+    background-color: rgba(174, 184, 234, 0.3);
+    /* background-color: rgba(161, 161, 167, 0.3); */
+}
+
+.sun-system.is-open .sun-system__content,
+.test.is-open .test__content {  
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    line-height: 130%;
+}
+
+.sun-system.is-open .sun-system__content a,
+.test.is-open .test__content a {
+    color: rgb(238, 233, 233);
+}
+.sun-system.is-open .sun-system__content a:hover,
+.test.is-open .test__content a:hover {
+    color: white;
+}
+
+.sun-system__toggle-icon,
+.test__toggle-icon {  /*для иконки +*/
+    width: 30px;  /*задаём размеры блока, внутри которого с помощью bgc вставится и*/
+    height: 25px;                                        /* позиционируется иконка*/
+    background: url('../images/icon-deploy.svg') no-repeat center center;
+}
+
+.sun-system.is-open .sun-system__toggle-icon,
+.test.is-open .test__toggle-icon {
+    transform: rotate(180deg);  /*поворачиваем + превращая его в х*/
+    transition: 0.3s;
+}
+
+
+.page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 40px;
+    margin: 0;
+    padding: 30px 0; /*верх/низ - первое значение, лево/право - второе*/
+    text-align: center;
+    color: #13238d;
+}
+
+.section-title {
+    color: #155315;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section-margin {
+    margin-bottom: 60px;
+}
+
+.content-with-img {
+    padding-right: 100px;
+}
+
+.main-img-page {
+    width: 250px;
+    height: 250px;
+}
+
+.big-img-page {
+    width: 350px;
+    height: 350px;
+}
+
+/*font-size for text*/
+.small-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+}
+
+.medium-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+}
+
+.big-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+}
+
+/* flex */
+.flex {
+    display: flex;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-ai-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column-sb {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-column-ai-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* кнопки перехода между страницами*/
+.go-page .btn-page {
+    margin-right: 20px;    
+    margin-left: 20px;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.btn-page {
+    height: 35px;
+    border: 1px solid grey;  
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.btn-page a {
+    color: #282c50;
+}
+
+.btn-page__main {
+    width: 100px;
+    background-color: #f3e2fc;
+}
+
+.btn-page__main:hover {
+    background-color: #e2c4f1;
+    font-weight: 600;
+}
+
+.btn-page__back,
+.btn-page__next {
+    background-color: #b0b7f8;
+    width: 90px;
+}
+
+.btn-page__back:hover,
+.btn-page__next:hover {
+    background-color: #99a3f8;
+}
+
+.btn-page__back img {
+    margin-right: 5px;
+}
+
+.btn-page__next img {
+    margin-left: 3px;
+}
+
+
+
+
+
+/* CТИЛИ ДЛЯ ВОПРОСОВ-ОТВЕТОВ */
+.quiz {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.quiz-questions {
+    margin-bottom: 20px;
+}
+
+.quiz-questions__item {
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.quiz-questions__item--question {
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.quiz-questions__item--answers {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.quiz-indicator {
+    margin-bottom: 20px;
+}
+
+.btn-next {
+    height: 35px;
+    font-weight: 600;
+    font-size: 16px;    
+    cursor: pointer;
+    color: blue;
+    background-color: #99a3f8;
+    border: 1px solid blue;
+
+
+}
+
+.btn-next:disabled {
+    background-color: #cecac7;
+    cursor: not-allowed;
+    color: #6c6967;
+    border: none;
+}
+
+
+.btn-restart {
+    display: none;
+    height: 35px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.quiz-results {
+    display: none;
+}
+
+.question--hidden,
+.indicator--hidden,
+.btn-next--hidden {
+    display: none;
+}
+
+.indicator--visible,
+.btn-restart--visible {
+    display: block;
+}
+
+.answer-label {
+    border: 1px solid green;
+}
+
+.answer-input {
+    width: 40px;
+    height: 15px;
+    border: 1px solid green;
+    margin-bottom: 10px;
+}
+
+.answer-invalid {
+    color: red;
+}
+
+.answer-valid {
+    color: green;
+}
+
+
+/* РЕГИСТРАЦИЯ / АВТОРИЗАЦИЯ */
+.feedback-form-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.4s ease 0s;
+}
+
+/* .feedback-form-modal:target {
+    opacity: 1;
+    visibility: visible;
+}    */
+
+/* .feedback-form-modal:target .feedback-form-modal__content {
+    transform: translate(0, 0);
+    opacity: 1;
+} */
+
+.feedback-form-modal__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.feedback-form-modal__content {
+    max-width: 500px;
+    padding: 30px;
+    min-height: 400px;
+    margin: auto;
+    border-radius: 4px;
+    background-color: #353535;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.4s ease 0s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.feedback-form-modal__close {
+    position: absolute; 
+    display: block;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    color: red;
+}
+
+.page-auth {
+    background-image: url("../images/тест2.jpg");
+    width: 100%; 
+    min-height: 100vh;
+    background-size: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* .reg-label {
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: 'Lato';
+} */
+
+.reg-input,
+.log-input {
+    border: 2px solid #ccc;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    padding: 10px;
+    color: blue;
+}
+
+.reg-input:focus,
+.log-input:focus {
+    border: 2px solid blue;
+    outline: none;
+}
+
+.reg-form,
+.log-form {
+    margin: 25px auto;
+    padding: 20px;
+    border: 5px solid #ccc;
+    width: 500px;
+    background: rgb(181, 181, 181);
+}
+
+.form-element {
+    margin-bottom: 20px;
+}
+
+.reg-btn {
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    background: green;
+    color: white;
+    border: 1px solid rgb(11, 79, 11);
+    cursor: pointer;
+}
+
+p.success,
+p.error {
+    color: white;
+    font-family: lato;
+    background: green;
+    display: inline-block;
+    padding: 2px 10px;
+}
+p.error {
+    background: orangered;
+}
+
+.btn-logout {
+    border: none; 
+    outline: none;
+    background: none;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    cursor: pointer;
+}
+
+.flash-error {
+    color: red;
+}

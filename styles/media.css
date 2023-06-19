@@ -1,0 +1,15 @@
+@media screen and (max-width: 1200px) {
+/* На устройства 1024px*/
+
+    .container {
+        width: 1000px;
+    }
+  
+  }
+  
+
+@media screen and (max-width: 1020px) {
+/* На устройства 768px*/
+
+
+}
